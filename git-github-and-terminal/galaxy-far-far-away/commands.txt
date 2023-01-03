@@ -42,4 +42,24 @@ Part VI: all together
 
 14a. millenium_falcon % mv princess_leia.txt .. && mv luke.txt ../x_wing
 
-15a.
+15a. yavin_4 % mv millenium_falcon .. && mv x_wing ..
+
+16a. galaxy-far-far-away % cd death_star && mkdir tie_fighter_1 tie_fighter_2 tie_fighter_3
+
+17a. death_star % mv darth_vader.txt tie_fighter_1
+
+18a. death_star % cp storm_trooper.txt tie_fighter_2 && cp storm_trooper.txt tie_fighter_3
+
+19a. death_star % mv tie_fighter_1 tie_fighter_2 tie_fighter_3 ..
+
+Part VII: rm -r: remove directories and everything they contain
+
+20a. galaxy-far-far-away % rm -r tie_fighter_2 tie_fighter_3
+
+Part VIII:
+
+21a. galaxy-far-far-away % cd x_wing && touch the_force.txt
+
+22a. x_wing % cd .. && rm -r death_star
+
+23a. galaxy-far-far-away % mv x_wing yavin_4 && mv millenium_falcon yavin_4
