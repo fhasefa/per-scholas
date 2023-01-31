@@ -30,10 +30,13 @@ class Ship {
 
 let ussAssembly = new Ship('USS Assembly', 20, 5, 0.7);
 let alienBattleFleet = new Ship
+// ***bonus (uncomment line 34 and comment out line 36)
+// alienBattleFleet.generateAlienShip(Math.floor(Math.random() * (12 - 6) + 6))
 
-alienBattleFleet.generateAlienShip(Math.floor(Math.random() * (12 - 6) + 6))
+alienBattleFleet.generateAlienShip(6)
 
- console.log(alienBattleFleet.alienShips)
+
+// console.log(alienBattleFleet.alienShips)
 // console.log(ussAssembly)
 
 function playGame() {
