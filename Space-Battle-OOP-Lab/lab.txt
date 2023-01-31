@@ -1,0 +1,202 @@
+// you attack alienShip1
+// if alienShip1's hp > 0, then it attacks you
+// if your hp > 0, you attack the alienShip1 again
+// if alienShip1 > 0 still, it attacks you again...repeatedly
+// if alienShip =< 0, you have the option to attack the next ship or retreat
+// if you retreat(return), the game ends, perhaps leaving the game open for further developments or option
+// You win the game if all alienship's hp =< 0.
+// you lose if your hp =< 0.
+
+// -------------------------------BEGINNING OF CODE--------------------------------------------------------------
+
+class Ship {
+    constructor(hull, firepower, accuracy) {
+        this.hull = hull
+        this.firepower = firepower
+        this.accuracy = accuracy
+    }
+    attack(targetShip) {
+        if (Math.random() < this.accuracy) {
+            targetShip.hull -= this.firepower
+            console.log(`You have successfully hit ${targetShip}!`)}
+        else {
+            console.log(`You missed ${targetShip}!`)
+        }
+    }
+}
+
+let ussAssembly = new Ship(20, 5, 0.7);
+let alienShips = [];
+
+function generateAlienShip(numOfShips) {
+    let counter = 0;
+    while (counter < numOfShips);
+    alienShips.push(new Ship(Math.floor(Math.random() * (6 - 3) + 3), Math.floor(Math.random() * (4 - 2) + 2), Math.random() * (0.8 - 0.6) + 0.6));
+    counter++
+}
+
+generateAlienShip(3)
+console.log(alienShips)
+
+// let alienShips = [
+//     new Ship(Math.floor(Math.random() * (6 - 3) + 3), Math.floor(Math.random() * (4 - 2) + 2), Math.random() * (0.8 - 0.6) + 0.6),
+//     new Ship(Math.floor(Math.random() * (6 - 3) + 3), Math.floor(Math.random() * (4 - 2) + 2), Math.random() * (0.8 - 0.6) + 0.6),
+//     new Ship(Math.floor(Math.random() * (6 - 3) + 3), Math.floor(Math.random() * (4 - 2) + 2), Math.random() * (0.8 - 0.6) + 0.6),
+//     new Ship(Math.floor(Math.random() * (6 - 3) + 3), Math.floor(Math.random() * (4 - 2) + 2), Math.random() * (0.8 - 0.6) + 0.6),
+//     new Ship(Math.floor(Math.random() * (6 - 3) + 3), Math.floor(Math.random() * (4 - 2) + 2), Math.random() * (0.8 - 0.6) + 0.6),
+//     new Ship(Math.floor(Math.random() * (6 - 3) + 3), Math.floor(Math.random() * (4 - 2) + 2), Math.random() * (0.8 - 0.6) + 0.6)
+// ];
+
+// for (let i = 0, i < alienShip.length, alienShip.shift()) {
+//     fighterShip.attack(AlienShip1)
+//     AlienShip1.attack(fighterShip)
+// }
+
+// while (fighterShip.hull > 0 && AlienShip[].hull > 0) {
+
+// }
+// let prompt1;
+// if(fighterShip.hull>0){
+//     console.log('Fighter Ship won')
+   
+// } 
+// if(AlienShip1.hull>0) {
+//     console.log('AlienShip won')
+// }
+// prompt1 = prompt("Do you want to attack or retreat?")
+// if(prompt1 == "attack"){
+//     fighterShip.attack(AlienShip2)
+// }else{
+//     console.log("Retreat")
+// }
+
+
+// ------------------------- END OF CODE-----------------------------------------------------------------------------
+
+
+
+// class AlienShip extends Ship {
+//     constructor() {
+//         super()
+//         this.hull = Math.floor(Math.random() * (6 - 3) + 3);
+//         this.firepower = Math.floor(Math.random() * (4 - 2) + 2);
+//         this.accuracy = Math.random() * (0.8 - 0.6) + 0.6;
+//     }
+//     attack() {
+//         if (Math.random() < this.accuracy) {
+//             console.log('You have been hit')
+
+//             // ---> psuedo code   ( alien firepower - player hull ) // ---> psuedo code
+//         }
+//     }
+// }
+
+// console.log(AlienShip1)
+
+// Ship.attack(AlienShip1)
+
+//----------------------------------------------------- AI CODE--------------------------------------------------------
+// class Ship {
+//     constructor(hull, firepower, accuracy) {
+//       this.hull = hull;
+//       this.firepower = firepower;
+//       this.accuracy = accuracy;
+//     }
+  
+//     attack(target) {
+//       if (Math.random() < this.accuracy) {
+//         target.hull -= this.firepower;
+//         console.log("HIT! Target ship hull remaining: " + target.hull);
+//       } else {
+//         console.log("MISS! Target ship hull remaining: " + target.hull);
+//       }
+//     }
+//   }
+  
+//   // USS Assembly properties
+//   const USSAssembly = new Ship(20, 5, 0.7);
+  
+//   // Alien ships properties
+//   const alienShips = [
+//     new Ship(Math.floor(Math.random() * 4) + 3, Math.floor(Math.random() * 3) + 2, Math.random() * 0.2 + 0.6),
+//     new Ship(Math.floor(Math.random() * 4) + 3, Math.floor(Math.random() * 3) + 2, Math.random() * 0.2 + 0.6),
+//     new Ship(Math.floor(Math.random() * 4) + 3, Math.floor(Math.random() * 3) + 2, Math.random() * 0.2 + 0.6),
+//     new Ship(Math.floor(Math.random() * 4) + 3, Math.floor(Math.random() * 3) + 2, Math.random() * 0.2 + 0.6),
+//     new Ship(Math.floor(Math.random() * 4) + 3, Math.floor(Math.random() * 3) + 2, Math.random() * 0.2 + 0.6),
+//     new Ship(Math.floor(Math.random() * 4) + 3, Math.floor(Math.random() * 3) + 2, Math.random() * 0.2 + 0.6)
+//   ];
+  
+//   // function to play the game
+//   function playGame() {
+//     // loop through each alien ship
+//     for (let i = 0; i < alienShips.length; i++) {
+//       console.log("Attacking alien ship " + (i + 1) + "...");
+//       let alien = alienShips[i];
+  
+//       // loop for attacking and counter-attacking
+//       while (alien.hull > 0 && USSAssembly.hull > 0) {
+//         USSAssembly.attack(alien);
+        
+//         // check if the alien is destroyed
+//         if (alien.hull <= 0) {
+//           console.log("Alien ship destroyed!");
+//           console.log("Do you want to attack next ship or retreat?");
+//           break;
+//         }
+        
+//         // counter-attack
+//         alien.attack(USSAssembly);
+        
+//         // check if the USS Assembly is destroyed
+//         if (USSAssembly.hull <= 0) {
+//           console.log("USS Assembly destroyed! Game Over.");
+//           return;
+//         }
+//       }
+//     }
+
+//     console.log("All alien ships destroyed! You win!");
+//   }
+
+//   playGame()
+
+//~~~~~~~~~~~~~~~my work~~~~~~~~~~~~~~~~~~~~~~~
+class Ship {
+    constructor(hull, firepower, accuracy) {
+        this.hull = hull
+        this.firepower = firepower
+        this.accuracy = accuracy
+        this.alienShips = []
+    }
+    attack(targetShip) {
+        if (Math.random() < this.accuracy) {
+            targetShip.hull -= this.firepower
+            console.log(`You have successfully hit ${targetShip}!`)}
+        else {
+            console.log(`You missed ${targetShip}!`)
+        }
+    }
+}
+
+class alienShipFactory extends Ship {
+    constructor() {
+        super()
+        this.alienShips = []
+    }
+
+    static generateAlienShip(numOfShips) {
+        let counter = 0;
+            while (counter < numOfShips) {
+             const alienShip = new Ship(Math.floor(Math.random() * (6 - 3) + 3), Math.floor(Math.random() * (4 - 2) + 2), Math.random() * (0.8 - 0.6) + 0.6);
+             this.alienShips.push(alienShip)
+            counter++;       
+    }
+}
+}
+
+let ussAssembly = new Ship(20, 5, 0.7);
+alienShipFactory.generateAlienShip(3)
+
+console.log('ussAssembly')
+
+
